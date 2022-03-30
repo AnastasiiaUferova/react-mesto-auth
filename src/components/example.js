@@ -79,3 +79,10 @@ function tokenCheck () {
         }
       }); 
     }
+
+
+
+
+
+
+    {location.pathname ==='/sign-up' ? <NavLink to="/sign-in" className="header__info">Войти</NavLink> : <NavLink to="/sign-up" className="header__info">Регистрация</NavLink> }

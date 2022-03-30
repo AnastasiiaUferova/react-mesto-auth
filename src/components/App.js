@@ -39,7 +39,7 @@ function App() {
         if (loggedIn) {
           history.push("/")
         }
-      }, [loggedIn])
+      }, [loggedIn, history])
 
     useEffect(() => {
         Promise.all([api.getUserInfo(), api.getCards()])
@@ -147,16 +147,15 @@ function App() {
         });
       }
 
+      //useEffect
+
 
       function handleLogin(password, email){
         return auth.authorize(password, email)
             .then((data) => {
               if (data.token){
                 localStorage.setItem('jwt', data.token);
-                console.log(data.token)
-                const { email }  = data;
-                const userData = { email }
-                setUserData(userData);
+                setUserData({email: email});
                 setLoggedIn(true);
                 history.push('/');
               }
@@ -173,10 +172,7 @@ function App() {
             auth.getContent(jwt).then((data) => {
                 if (data) {
                     // здесь можем получить данные пользователя!
-                    const userData = {
-                        email: data.email,
-                    };
-                    setUserData(userData);
+                    setUserData({email: data.data.email});
                     setLoggedIn(true);
                     history.push("/");
                 }
@@ -184,7 +180,7 @@ function App() {
         }
     }
     
-      function signOut(){
+      function handleSignOut () {
         localStorage.removeItem('jwt');
         history.push('/sign-up');
         setLoggedIn(false);
@@ -196,7 +192,7 @@ function App() {
             <div className="root">
        
                 
-                <Header signOut={signOut}/>
+                <Header signOut={handleSignOut} userData={userData} />
         
                 <Switch>
                 

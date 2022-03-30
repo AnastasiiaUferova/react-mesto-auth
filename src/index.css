@@ -80,4 +80,7 @@
 @import url(./blocks/popup/__container/_type/popup__container_type_info.css);
 @import url(./blocks/popup/__title/_type/popup__title_type_info.css);
 @import url(./blocks/popup/__info-image/popup__info-image.css);
-@import url(./blocks/header/__info/header__info.css)
+@import url(./blocks/header/__info/header__info.css);
+@import url(./blocks/header/__email/header__email.css);
+@import url(./blocks/header/__info/_sign-out/header__info_sign-out.css);
+@import url(./blocks/header/__info-container/header__info-container.css);
