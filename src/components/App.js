@@ -32,6 +32,16 @@ function App() {
     const [userData, setUserData] = useState({});
 
     useEffect(() => {
+        tokenCheck()
+      }, [])
+    
+      useEffect(() => {
+        if (loggedIn) {
+          history.push("/")
+        }
+      }, [loggedIn])
+
+    useEffect(() => {
         Promise.all([api.getUserInfo(), api.getCards()])
             .then(([userData, cards]) => {
                 setCurrentUser(userData);
@@ -41,6 +51,7 @@ function App() {
                 console.log(err);
             });
     }, []);
+
 
     function handleEditAvatarClick() {
         setIsEditAvatarPopupOpen(true);
@@ -141,28 +152,63 @@ function App() {
         return auth.authorize(password, email)
             .then((data) => {
               if (data.token){
-                localStorage.setItem('jwt', data.jwt);
+                localStorage.setItem('jwt', data.token);
+                console.log(data.token)
+                const { email }  = data;
+                const userData = { email }
+                setUserData(userData);
                 setLoggedIn(true);
                 history.push('/');
               }
             })
       }
 
-      
 
-  
+      function tokenCheck() {
+        // если у пользователя есть токен в localStorage,
+        // эта функция проверит валидность токена
+        const jwt = localStorage.getItem('jwt');
+        if (jwt) {
+            // проверим токен
+            auth.getContent(jwt).then((data) => {
+                if (data) {
+                    // здесь можем получить данные пользователя!
+                    const userData = {
+                        email: data.email,
+                    };
+                    setUserData(userData);
+                    setLoggedIn(true);
+                    history.push("/");
+                }
+            });
+        }
+    }
+    
+      function signOut(){
+        localStorage.removeItem('jwt');
+        history.push('/sign-up');
+        setLoggedIn(false);
+      }
+
 
     return (
         <CurrentUserContext.Provider value={currentUser}>
             <div className="root">
        
                 
-                <Header/>
+                <Header signOut={signOut}/>
         
                 <Switch>
                 
-                <ProtectedRoute exact path="/" loggedIn={true} component={Main}
-                onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} openPopupDelete={handleOpenPopupDelete} onCardLike={handleCardLike} cards={cards}
+                <ProtectedRoute exact path="/" loggedIn={loggedIn} 
+                component={Main}
+                onEditProfile={handleEditProfileClick} 
+                onAddPlace={handleAddPlaceClick} 
+                onEditAvatar={handleEditAvatarClick} 
+                onCardClick={handleCardClick} 
+                openPopupDelete={handleOpenPopupDelete} 
+                onCardLike={handleCardLike} 
+                cards={cards}
                 />
                 <Route path="/sign-up">
                 <Register handleRegister={handleRegister} />

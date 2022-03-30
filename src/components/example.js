@@ -53,3 +53,29 @@ localStorage.setItem('jwt', data.jwt);
 setUserData({email})
 setLoggedIn(true);
 history.push('/');
+
+
+
+function tokenCheck () {
+    // если у пользователя есть токен в localStorage,
+    // эта функция проверит валидность токена 
+      const jwt = localStorage.getItem('jwt');
+    if (jwt){
+      // проверим токен
+      duckAuth.getContent(jwt).then((res) => {
+        if (res){
+                  // здесь можем получить данные пользователя!
+          const userData = {
+            username: res.username,
+            email: res.email
+          }
+                  // поместим их в стейт внутри App.js
+          this.setState({
+            loggedIn: true,
+            userData
+          }, () => {
+            this.props.history.push("/ducks");
+          });
+        }
+      }); 
+    }
