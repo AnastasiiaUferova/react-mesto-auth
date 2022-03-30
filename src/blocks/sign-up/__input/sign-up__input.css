@@ -1,0 +1,18 @@
+.sign-up__input {
+    width: 358px;
+    font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: #CCCCCC;
+    background-color: #000000;
+    overflow: hidden;
+    border: 0;
+    border-bottom: 2px solid #CCCCCC;
+    align-self: center;
+    margin-bottom: 30px;
+    padding: 0;
+    padding-bottom: 13px;
+    box-sizing: content-box;
+}

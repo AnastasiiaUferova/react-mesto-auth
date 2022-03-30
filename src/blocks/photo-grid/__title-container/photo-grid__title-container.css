@@ -1,0 +1,6 @@
+.photo-grid__title-container {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    height: 85px;
+}

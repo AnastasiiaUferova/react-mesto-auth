@@ -1,0 +1,8 @@
+@media (max-width: 850px) {
+    .popup__close-button_type_pic {
+        width: 20px;
+        height: 20px;
+        top: -33px;
+        right: 0px;
+    }
+}

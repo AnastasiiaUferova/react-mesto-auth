@@ -1,0 +1,20 @@
+.photo-grid__like {
+    margin-right: 0px;
+    background-image: url(../../../images/Like.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-in-out;
+    width: 45px;
+    height: 30px;
+    align-self: center;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    flex-flow: column nowrap;
+    padding-bottom: 0;
+}
+
+.photo-grid__like:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}

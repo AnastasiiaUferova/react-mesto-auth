@@ -1,0 +1,13 @@
+.root__profile {
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 51px;
+}
+
+@media (max-width: 657px) {
+    .root__profile {
+        margin: auto;
+        margin-top: 38.25px;
+        margin-bottom: 36px;
+    }
+}

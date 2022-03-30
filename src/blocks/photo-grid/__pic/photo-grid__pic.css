@@ -1,0 +1,13 @@
+.photo-grid__pic {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 282px;
+    height: 282px;
+    object-fit: cover;
+}
+
+.photo-grid__pic:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 1s, opacity 0.6s linear;
+}

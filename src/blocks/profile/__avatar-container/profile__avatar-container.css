@@ -1,0 +1,14 @@
+.profile__avatar-container {
+        position: relative;
+        margin: auto;
+        border-radius: 50%;
+    }
+    
+.profile__avatar-container::before {
+        width: 100%;
+        height: 100%;
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+    }

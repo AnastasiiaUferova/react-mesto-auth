@@ -1,0 +1,11 @@
+.root__header {
+    margin: auto;
+    margin-top: 45px;
+}
+
+@media (max-width: 425px) {
+    .root__header {
+        margin: 0;
+        margin-top: 28px;
+    }
+}

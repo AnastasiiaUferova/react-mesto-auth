@@ -1,0 +1,5 @@
+.sign-up__subtitle-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

@@ -1,0 +1,5 @@
+.sign-up__container{
+    width: 358px;
+    display: flex;
+    flex-direction: column;
+}
