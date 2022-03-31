@@ -5,13 +5,7 @@ const checkResponse = (response) => {
   if (response.ok) {
     return response.json()
   }
-  return response.json().then((data) => {
-    const { statusCode } = data;
-    const { message } = data.message[0].messages[0]
-    const error = new Error(message || 'Что-то пошло не так');
-    error.status = statusCode;
-    throw error;
-  })
+  return Promise.reject(`Ошибка ${response.status}`);
 }
 
 
@@ -54,4 +48,3 @@ const checkResponse = (response) => {
     .then(res => res.json())
     .then(data => data)
   } 
-

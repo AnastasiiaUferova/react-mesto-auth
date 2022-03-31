@@ -32,8 +32,8 @@ function App() {
     const history = useHistory();
     const [userData, setUserData] = useState({});
     const [isTooltipPopupOpen, setIsTooltipPopupOpen] = useState(false);
-    const [imageTooltip, setImageTooltip] = useState();
-    const [textTooltip, setTextTooltip] = useState();
+    const [imageTooltip, setImageTooltip] = useState('');
+    const [textTooltip, setTextTooltip] = useState('');
 
     useEffect(() => {
         tokenCheck();
@@ -46,6 +46,7 @@ function App() {
     }, [loggedIn, history]);
 
     useEffect(() => {
+        if (loggedIn===true) {
         Promise.all([api.getUserInfo(), api.getCards()])
             .then(([userData, cards]) => {
                 setCurrentUser(userData);
@@ -54,7 +55,8 @@ function App() {
             .catch((err) => {
                 console.log(err);
             });
-    }, []);
+        }
+    }, [loggedIn]);
 
     function handleEditAvatarClick() {
         setIsEditAvatarPopupOpen(true);
@@ -168,8 +170,15 @@ function App() {
                 setLoggedIn(true);
                 history.push("/");
             }
-        });
+        })
+        .catch((err) => {
+        setImageTooltip(cross);
+        setTextTooltip(err);
+        setIsTooltipPopupOpen(true);
+        })
+        
     }
+
 
     function tokenCheck() {
         // если у пользователя есть токен в localStorage,
