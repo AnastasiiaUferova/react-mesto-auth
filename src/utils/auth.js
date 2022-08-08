@@ -16,7 +16,7 @@ const checkResponse = (response) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({password, email})
+      body: JSON.stringify({password, email}), 
     })
     .then(checkResponse)
   };

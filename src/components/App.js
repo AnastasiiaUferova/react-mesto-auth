@@ -166,6 +166,7 @@ function App() {
         return auth.authorize(password, email).then((data) => {
             if (data.token) {
                 localStorage.setItem("jwt", data.token);
+                console.log(data.token)
                 setUserData({ email: email });
                 setLoggedIn(true);
                 history.push("/");
