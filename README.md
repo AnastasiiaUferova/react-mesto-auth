@@ -1,5 +1,7 @@
 # REACT.js + authentification + authorization 'Mesto' (Place') interactive web page student project for [Yandex.Practicum](https://practicum.com)
 
+## Check out the project on the [GitHub Pages](https://anastasiiauferova.github.io/react-mesto-auth)
+
 ## Description
 
 This project is an nteractive gallery where users can share photos. The main concepts and techs I practiced working on the project: React.js Functional Components, useState, useEffect hooks, Asynchronous JavaScript, Fetch API. The data is loaded from and onto external API provided by Yandex. This projects builds upon the functionality of the Mesto React project and adds the functionality of authentification and authorization to it. Previous version of the project can be found [here](https://github.com/AnastasiiaUferova/mesto-react). 
