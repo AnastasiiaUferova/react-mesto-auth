@@ -14,7 +14,7 @@ This project has been ported to the React.js framework from the pure [JavaScript
 * Add new cards;
 * Delete cards created by the user;
 * "Like" and "dislike" photos;
-* Expand the photos by clicking on them (pop-up shows up)
+* Expand the photos by clicking on them (pop-up shows up);
 * Close the picture popup by clicking on "X";
 * Editing user profile information including name, description and avatar;
 * Communication with external API to fetch and patch/delete data
