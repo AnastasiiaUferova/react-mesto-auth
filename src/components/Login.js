@@ -29,12 +29,12 @@ function Login({ handleLogin }) {
     return (
         <div className="sign-up">
             <div className="sign-up__container">
-                <h2 className="sign-up__title">Вход</h2>
+                <h2 className="sign-up__title">Login</h2>
                 <form name="sign-up-form" className="sign-up__form" onSubmit={handleSubmit}>
                     <input id="login-email-input" type="email" name="email" onChange={handleChange} value={email} className="sign-up__input sign-up__input_type_email" placeholder="Email" required />
-                    <input id="login-password-input" type="password" name="password" onChange={handleChange} value={password} className="sign-up__input sign-up__input_type_password" placeholder="Пароль" required />
+                    <input id="login-password-input" type="password" name="password" onChange={handleChange} value={password} className="sign-up__input sign-up__input_type_password" placeholder="Password" required />
                     <button className="sign-up__save-button" type="submit">
-                        Войти
+                        Login
                     </button>
                 </form>
             </div>

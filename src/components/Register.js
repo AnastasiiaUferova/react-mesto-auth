@@ -30,18 +30,18 @@ const Register = ({ handleRegister }) =>  {
     return (
     <div className="sign-up">
         <div className="sign-up__container">
-            <h2 className="sign-up__title">Регистрация</h2>
+            <h2 className="sign-up__title">Registration</h2>
             <form name="sign-up-form" className="sign-up__form" onSubmit={handleSubmit}>
             <label htmlFor="email">
                 <input id="email" type="email" name="email" onChange={handleChange} value={email} className="sign-up__input sign-up__input_type_email" placeholder="Email" required />
             </label>
             <label htmlFor="password">
-                <input id="password" onChange={handleChange} value={password} type="password" name="password" className="sign-up__input sign-up__input_type_password" placeholder="Пароль" required />
+                <input id="password" onChange={handleChange} value={password} type="password" name="password" className="sign-up__input sign-up__input_type_password" placeholder="Password" required />
             </label>
-                <button className="sign-up__save-button" type="submit">Зарегистрироваться</button>
+                <button className="sign-up__save-button" type="submit">Register</button>
             </form>
             <div className="sign-up__subtitle-container">
-                <p className="sign-up__subtitle">Уже зарегистрированы? <Link to="/sign-in" className="sign-up__link"href="#">Войти</Link></p>
+                <p className="sign-up__subtitle">Already registered? <Link to="/sign-in" className="sign-up__link"href="#">Login</Link></p>
             </div>
         </div>
     </div>

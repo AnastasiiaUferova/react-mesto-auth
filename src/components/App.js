@@ -107,10 +107,8 @@ function App() {
     }
 
     function handleCardLike(card) {
-        // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = card.likes.some((i) => i._id === currentUser._id);
 
-        // Отправляем запрос в API и получаем обновлённые данные карточки
+        const isLiked = card.likes.some((i) => i._id === currentUser._id);
         return api
             .changeLikeCardStatus(card._id, isLiked)
             .then((newCard) => {
@@ -151,13 +149,13 @@ function App() {
             .register(password, email)
             .then(() => {
                 setImageTooltip(tick);
-                setTextTooltip("Вы успешно зарегистрировались!");
+                setTextTooltip("You have successfully registered!");
                 setIsTooltipPopupOpen(true);
                 history.push("/sign-in");
             })
             .catch(() => {
                 setImageTooltip(cross);
-                setTextTooltip("Что-то пошло не так! Попробуйте ещё раз.");
+                setTextTooltip("Something went wrong! Try again.");
                 setIsTooltipPopupOpen(true);
             });
     }
@@ -182,14 +180,14 @@ function App() {
 
 
     function tokenCheck() {
-        // если у пользователя есть токен в localStorage,
-        // эта функция проверит валидность токена
+        // if the user has a token in localStorage,
+        // this function will check if the token is valid
         const jwt = localStorage.getItem("jwt");
         if (jwt) {
-            // проверим токен
+            // check token
             auth.getContent(jwt).then((data) => {
                 if (data) {
-                    // здесь можем получить данные пользователя!
+                    // here we can get user data
                     setUserData({ email: data.data.email });
                     setLoggedIn(true);
                     history.push("/");

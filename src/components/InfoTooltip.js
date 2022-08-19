@@ -1,7 +1,4 @@
 import React from 'react' 
-import tick from '../images/Tick.svg'
-import cross from '../images/Cross.svg'
-
 
 function InfoTooltip({isOpen, onClose, text, image}) { 
 
@@ -13,7 +10,7 @@ function InfoTooltip({isOpen, onClose, text, image}) {
                 <img
                 className="popup__info-image"
                 src={image}
-                alt="Знак подтверждения"
+                alt="Confirmation sign"
                 />
                 <h2 className="popup__title popup__title_type_info">{text}</h2>
     
