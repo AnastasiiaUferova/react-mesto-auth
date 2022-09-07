@@ -234,7 +234,7 @@ function App() {
                 <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
                 <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
                 <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit} />
-                <PopupConfirm name="confirm" title="Вы уверены?" card={selectedCard} isOpen={isConfirmPopupOpen} onClose={closeAllPopups} onCardDelete={handleCardDelete}></PopupConfirm>
+                <PopupConfirm name="confirm" title="Are you sure?" card={selectedCard} isOpen={isConfirmPopupOpen} onClose={closeAllPopups} onCardDelete={handleCardDelete}></PopupConfirm>
 
                 <ImagePopup name="pic" card={selectedCard} onClose={closeAllPopups} isOpen={isImagePopupOpen} />
 
