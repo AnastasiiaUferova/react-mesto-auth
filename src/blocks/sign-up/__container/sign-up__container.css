@@ -3,3 +3,9 @@
     display: flex;
     flex-direction: column;
 }
+
+
+@media (max-width: 500px){
+.sign-up__container{
+    width: 70vw;
+}}

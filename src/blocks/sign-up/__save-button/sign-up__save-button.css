@@ -14,3 +14,10 @@
     border: none;
     cursor: pointer;
 }
+
+
+
+@media (max-width: 500px){
+    .sign-up__save-button{
+        margin-top: 130px;
+    }}

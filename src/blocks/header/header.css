@@ -7,6 +7,14 @@
     justify-content:space-between;
 }
 
+
+@media (max-width: 550px) {
+    .header {
+        flex-direction: column;
+    }
+}
+
+
 @media (max-width: 425px) {
     .header {
         max-width: 100%;

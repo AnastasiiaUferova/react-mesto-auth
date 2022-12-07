@@ -6,3 +6,11 @@
     margin-bottom: 60px;
     margin-top: 32px;
 }
+
+
+
+
+@media (max-width: 500px){
+    .popup__title_type_info{
+        width: 80%;
+    }}

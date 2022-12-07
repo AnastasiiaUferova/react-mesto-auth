@@ -16,3 +16,9 @@
     padding-bottom: 13px;
     box-sizing: content-box;
 }
+
+
+@media (max-width: 500px){
+    .sign-up__input{
+        width: 100%;
+    }}

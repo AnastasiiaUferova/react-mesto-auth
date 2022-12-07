@@ -1,3 +1,11 @@
 .header__info-container{
     display: flex;
 }
+
+
+
+@media (max-width: 550px) {
+    .header__info-container{
+        flex-direction: column-reverse;
+    }
+}
