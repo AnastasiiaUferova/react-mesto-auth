@@ -5,10 +5,12 @@ import { NavLink, useLocation } from "react-router-dom";
 function Header(props) {
     let { email } = props.userData;
 
+    let headerClass = props.loggedIn ? "header header-mobile root__header" : "header root__header";
+
     let location = useLocation();
 
     return (
-        <header className="header root__header">
+        <header className={headerClass}>
             <img className="header__logo" src={logo} alt="logo Mesto" />
 
             {location.pathname === "/sign-up" && (

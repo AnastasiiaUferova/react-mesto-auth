@@ -9,7 +9,7 @@
 
 
 @media (max-width: 550px) {
-    .header {
+    .header-mobile {
         flex-direction: column;
     }
 }

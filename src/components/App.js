@@ -205,7 +205,7 @@ function App() {
     return (
         <CurrentUserContext.Provider value={currentUser}>
             <div className="root">
-                <Header signOut={handleSignOut} userData={userData} />
+                <Header  loggedIn={loggedIn} signOut={handleSignOut} userData={userData} />
 
                 <Switch>
                     <ProtectedRoute
