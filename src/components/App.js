@@ -180,7 +180,6 @@ function App() {
 
 
     function tokenCheck() {
-        // if the user has a token in localStorage,
         // this function will check if the token is valid
         const jwt = localStorage.getItem("jwt");
         if (jwt) {
